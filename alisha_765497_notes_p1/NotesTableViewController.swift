@@ -12,6 +12,7 @@ class NotesTableViewController: UITableViewController {
 
     
     var folders: [String]?
+    var curInd = -1
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -104,19 +105,46 @@ class NotesTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        let detailNotes = segue.destination as! DetailViewController
+        detailNotes.NoteTable = self
+        
+//        if let tableViewcell = sender as? UITableViewCell{
+//            if let index = tableView.indexPath(for: tableViewCell)?.row{
+//            detailNotes.textString = folders![index]
+//            curInd = index
+        
+        
+        
     }
-    */
+        
+        func updateNotes(text: String)
+        {
+            guard folders != nil && curInd != -1 else {return}
+            folders![curInd] = text
+            
+//           let indexPath = IndexPath(item: curInd, section: 0)
+//          tableView.reloadData(at: [indexPath], with: .middle)
+        }
+        
+    
+    
 
     @IBAction func NewFolder(_ sender: UIBarButtonItem) {
         let alertController = UIAlertController(title: "New Folder", message: "Enter a name for folder", preferredStyle: .alert )
-        alertController.addTextField{ (text) in text.placeholder = "Name"}
+        
+        alertController.addTextField{ (textField) in textField.placeholder = "Name"}
+        
+        
+        
+        
         let Cancel = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
         
         Cancel.setValue(UIColor.brown, forKey: "titleTextColor")

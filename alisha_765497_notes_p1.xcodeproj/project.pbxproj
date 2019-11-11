@@ -15,6 +15,7 @@
 		9BD62ABD2379D2F1003FE0C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BD62ABB2379D2F1003FE0C2 /* LaunchScreen.storyboard */; };
 		9BD62AC82379D5BA003FE0C2 /* folder-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BD62AC72379D5BA003FE0C2 /* folder-icon.png */; };
 		9BD62ACA2379E53A003FE0C2 /* NotesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD62AC92379E53A003FE0C2 /* NotesTableViewController.swift */; };
+		9BD62ACC2379EFD2003FE0C2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD62ACB2379EFD2003FE0C2 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		9BD62ABE2379D2F1003FE0C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9BD62AC72379D5BA003FE0C2 /* folder-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "folder-icon.png"; sourceTree = "<group>"; };
 		9BD62AC92379E53A003FE0C2 /* NotesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTableViewController.swift; sourceTree = "<group>"; };
+		9BD62ACB2379EFD2003FE0C2 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailViewController.swift; path = ../../DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				9BD62ABB2379D2F1003FE0C2 /* LaunchScreen.storyboard */,
 				9BD62ABE2379D2F1003FE0C2 /* Info.plist */,
 				9BD62AC92379E53A003FE0C2 /* NotesTableViewController.swift */,
+				9BD62ACB2379EFD2003FE0C2 /* DetailViewController.swift */,
 			);
 			path = alisha_765497_notes_p1;
 			sourceTree = "<group>";
@@ -155,6 +158,7 @@
 			files = (
 				9BD62AB52379D2F0003FE0C2 /* ViewController.swift in Sources */,
 				9BD62ACA2379E53A003FE0C2 /* NotesTableViewController.swift in Sources */,
+				9BD62ACC2379EFD2003FE0C2 /* DetailViewController.swift in Sources */,
 				9BD62AB12379D2F0003FE0C2 /* AppDelegate.swift in Sources */,
 				9BD62AB32379D2F0003FE0C2 /* SceneDelegate.swift in Sources */,
 			);
