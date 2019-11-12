@@ -34,7 +34,7 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
-                                    <segue destination="yv0-jY-VwG" kind="show" trigger="accessoryAction" id="mvu-1C-k3s"/>
+                                    <segue destination="yv0-jY-VwG" kind="show" id="xGT-cz-DR1"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
