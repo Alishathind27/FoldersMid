@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B44297E237B29F900A91E1B /* NotesDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B44297D237B29F900A91E1B /* NotesDetailTableViewController.swift */; };
+		9B442982237B2C4500A91E1B /* NotesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B442981237B2C4500A91E1B /* NotesDetailViewController.swift */; };
+		9B442984237B307600A91E1B /* FolderNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B442983237B307600A91E1B /* FolderNote.swift */; };
 		9BD62AB12379D2F0003FE0C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD62AB02379D2F0003FE0C2 /* AppDelegate.swift */; };
 		9BD62AB32379D2F0003FE0C2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD62AB22379D2F0003FE0C2 /* SceneDelegate.swift */; };
 		9BD62AB52379D2F0003FE0C2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD62AB42379D2F0003FE0C2 /* ViewController.swift */; };
@@ -14,11 +17,13 @@
 		9BD62ABA2379D2F1003FE0C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BD62AB92379D2F1003FE0C2 /* Assets.xcassets */; };
 		9BD62ABD2379D2F1003FE0C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BD62ABB2379D2F1003FE0C2 /* LaunchScreen.storyboard */; };
 		9BD62AC82379D5BA003FE0C2 /* folder-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BD62AC72379D5BA003FE0C2 /* folder-icon.png */; };
-		9BD62ACA2379E53A003FE0C2 /* NotesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD62AC92379E53A003FE0C2 /* NotesTableViewController.swift */; };
-		9BD62ACC2379EFD2003FE0C2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD62ACB2379EFD2003FE0C2 /* DetailViewController.swift */; };
+		9BD62ACA2379E53A003FE0C2 /* FoldersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD62AC92379E53A003FE0C2 /* FoldersTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9B44297D237B29F900A91E1B /* NotesDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesDetailTableViewController.swift; sourceTree = "<group>"; };
+		9B442981237B2C4500A91E1B /* NotesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotesDetailViewController.swift; path = ../../NotesDetailViewController.swift; sourceTree = "<group>"; };
+		9B442983237B307600A91E1B /* FolderNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderNote.swift; sourceTree = "<group>"; };
 		9BD62AAD2379D2F0003FE0C2 /* alisha_765497_notes_p1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = alisha_765497_notes_p1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BD62AB02379D2F0003FE0C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BD62AB22379D2F0003FE0C2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,8 +33,7 @@
 		9BD62ABC2379D2F1003FE0C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9BD62ABE2379D2F1003FE0C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9BD62AC72379D5BA003FE0C2 /* folder-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "folder-icon.png"; sourceTree = "<group>"; };
-		9BD62AC92379E53A003FE0C2 /* NotesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTableViewController.swift; sourceTree = "<group>"; };
-		9BD62ACB2379EFD2003FE0C2 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailViewController.swift; path = ../../DetailViewController.swift; sourceTree = "<group>"; };
+		9BD62AC92379E53A003FE0C2 /* FoldersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldersTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,11 +71,13 @@
 				9BD62AB22379D2F0003FE0C2 /* SceneDelegate.swift */,
 				9BD62AB42379D2F0003FE0C2 /* ViewController.swift */,
 				9BD62AB62379D2F0003FE0C2 /* Main.storyboard */,
+				9B442983237B307600A91E1B /* FolderNote.swift */,
+				9B442981237B2C4500A91E1B /* NotesDetailViewController.swift */,
+				9B44297D237B29F900A91E1B /* NotesDetailTableViewController.swift */,
 				9BD62AB92379D2F1003FE0C2 /* Assets.xcassets */,
 				9BD62ABB2379D2F1003FE0C2 /* LaunchScreen.storyboard */,
 				9BD62ABE2379D2F1003FE0C2 /* Info.plist */,
-				9BD62AC92379E53A003FE0C2 /* NotesTableViewController.swift */,
-				9BD62ACB2379EFD2003FE0C2 /* DetailViewController.swift */,
+				9BD62AC92379E53A003FE0C2 /* FoldersTableViewController.swift */,
 			);
 			path = alisha_765497_notes_p1;
 			sourceTree = "<group>";
@@ -156,10 +162,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B442984237B307600A91E1B /* FolderNote.swift in Sources */,
 				9BD62AB52379D2F0003FE0C2 /* ViewController.swift in Sources */,
-				9BD62ACA2379E53A003FE0C2 /* NotesTableViewController.swift in Sources */,
-				9BD62ACC2379EFD2003FE0C2 /* DetailViewController.swift in Sources */,
+				9B442982237B2C4500A91E1B /* NotesDetailViewController.swift in Sources */,
+				9BD62ACA2379E53A003FE0C2 /* FoldersTableViewController.swift in Sources */,
 				9BD62AB12379D2F0003FE0C2 /* AppDelegate.swift in Sources */,
+				9B44297E237B29F900A91E1B /* NotesDetailTableViewController.swift in Sources */,
 				9BD62AB32379D2F0003FE0C2 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

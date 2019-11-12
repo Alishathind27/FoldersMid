@@ -8,10 +8,10 @@
 
 import UIKit
 
-class NotesTableViewController: UITableViewController {
+class FoldersTableViewController: UITableViewController {
 
     
-    var folders: [String]?
+//    var folders: [String]?
     var curInd = -1
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +20,7 @@ class NotesTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        folders = []
+//        folders = []
         self.navigationItem.rightBarButtonItem = self.editButtonItem
         self.navigationItem.rightBarButtonItem?.tintColor = .black
         
@@ -37,15 +37,16 @@ class NotesTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return folders?.count ?? 0
+        return FolderData.Detail.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard folders != nil else {return UITableViewCell()}
+//        guard folders != nil else {return UITableViewCell()}
         let cell = tableView.dequeueReusableCell(withIdentifier: "Folder", for: indexPath)
-        cell.textLabel?.text = folders![indexPath.row]
+        cell.textLabel?.text = FolderData.Detail[indexPath.row].Folders
         cell.imageView?.image = UIImage(named: "folder-icon")
+        cell.detailTextLabel?.text = "\(FolderData.Detail[indexPath.row].Notes.count)"
         
 
         // Configure the cell...
@@ -63,11 +64,16 @@ class NotesTableViewController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let actionController = UIContextualAction(style: .destructive, title: "Delete") {(action,view, _) in
-        self.folders?.remove(at: indexPath.row)
+            FolderData.Detail.remove(at: indexPath.row)
         self.tableView.reloadData()
         
         }
         return UISwipeActionsConfiguration(actions: [actionController])
+    }
+    
+    func FolReload()
+    {
+        tableView.reloadData()
     }
     
     /*
@@ -109,31 +115,21 @@ class NotesTableViewController: UITableViewController {
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+   override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        let detailNotes = segue.destination as! DetailViewController
-        detailNotes.NoteTable = self
+        let detailNotes = segue.destination as! NotesDetailTableViewController
+           detailNotes.FolDelegate = self
         
-//        if let tableViewcell = sender as? UITableViewCell{
-//            if let index = tableView.indexPath(for: tableViewCell)?.row{
-//            detailNotes.textString = folders![index]
-//            curInd = index
-        
-        
+      if let tableViewCell = sender as? UITableViewCell{
+           if let index = tableView.indexPath(for: tableViewCell)?.row{
+          curInd = index
         
     }
-        
-        func updateNotes(text: String)
-        {
-            guard folders != nil && curInd != -1 else {return}
-            folders![curInd] = text
-            
-//           let indexPath = IndexPath(item: curInd, section: 0)
-//          tableView.reloadData(at: [indexPath], with: .middle)
+              
         }
-        
+    }
     
     
 
@@ -152,8 +148,9 @@ class NotesTableViewController: UITableViewController {
         
         alertController.addAction(UIAlertAction (title: "Add Item ", style: .default, handler: {
             (action) in
-            let Str = alertController.textFields?.first?.text
-            self.folders?.append(Str!)
+            let Name = alertController.textFields?.first?.text
+            let folName = FolderData(Folders: Name!, Notes: [])
+            FolderData.Detail.append(folName)
             self.tableView.reloadData()
             
         }))
@@ -162,3 +159,4 @@ class NotesTableViewController: UITableViewController {
 
     }
 }
+
