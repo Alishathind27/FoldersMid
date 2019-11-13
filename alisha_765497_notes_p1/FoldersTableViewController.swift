@@ -43,7 +43,7 @@ class FoldersTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 //        guard folders != nil else {return UITableViewCell()}
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Folder", for: indexPath)
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "Folder"){
         cell.textLabel?.text = FolderData.Detail[indexPath.row].Folders
         cell.imageView?.image = UIImage(named: "folder-icon")
         cell.detailTextLabel?.text = "\(FolderData.Detail[indexPath.row].Notes.count)"
@@ -51,7 +51,8 @@ class FoldersTableViewController: UITableViewController {
 
         // Configure the cell...
 
-        return cell
+            return cell}
+        return UITableViewCell()
     }
     
 
@@ -150,9 +151,29 @@ class FoldersTableViewController: UITableViewController {
             (action) in
             let Name = alertController.textFields?.first?.text
             let folName = FolderData(Folders: Name!, Notes: [])
+            
+            
+            var flag = false
+            for i in FolderData.Detail{
+                let Name = folName.Folders
+                if Name == i.Folders
+                {
+                    flag = true
+                    break
+                }
+                }
+            if flag{
+                let alertController = UIAlertController(title: "Name Taken", message: "Please choose a different name", preferredStyle: .alert)
+                let OkAction = UIAlertAction(title: "ok", style: .destructive, handler: nil)
+                alertController.addAction(OkAction)
+                self.present(alertController, animated: true, completion: nil)
+            }
+                
+            else
+            {
             FolderData.Detail.append(folName)
             self.tableView.reloadData()
-            
+        }
         }))
         alertController.view.tintColor = .black
         self.present(alertController, animated:  true, completion: nil)

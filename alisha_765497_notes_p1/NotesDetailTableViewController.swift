@@ -10,8 +10,11 @@ import UIKit
 
 class NotesDetailTableViewController: UITableViewController {
 
+    @IBOutlet var Delete: UIBarButtonItem!
+    @IBOutlet var Move: UIBarButtonItem!
     var FolDelegate: FoldersTableViewController?
     
+    @IBOutlet var table_view: UITableView!
     var curIndx = -1
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +23,10 @@ class NotesDetailTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        self.navigationItem.rightBarButtonItem = self.editButtonItem
+        table_view.allowsMultipleSelection = true
+        Delete.isEnabled = false
+        Move.isEnabled = false
+        
     }
 
     // MARK: - Table view data source
@@ -43,14 +49,71 @@ class NotesDetailTableViewController: UITableViewController {
          
         // Configure the cell...
             cell.textLabel?.text = FolderData.Detail[(FolDelegate?.curInd)!].Notes[indexPath.row]
+            
         return cell
     }
         return UITableViewCell()
 }
-    
 
+    @IBAction func EditButton(_ sender: UIBarButtonItem)
+    {
+        if !Delete.isEnabled
+        {
+            Delete.isEnabled = true
+            Move.isEnabled = true
+        }
+        else{
+            Delete.isEnabled = false
+                   Move.isEnabled = false
+        }
+    }
+    
+    @IBAction func Delete(_ sender: UIBarButtonItem)
+    {
+        let alertController = UIAlertController(title: "Delete", message: "Are you Sure", preferredStyle: .alert)
+        let CancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let deleteAction = UIAlertAction(title: "Delete", style: .default){(action) in
+            self.deleteRow() }
+        
+            alertController.addAction(CancelAction)
+            alertController.addAction(deleteAction)
+            self.present(alertController, animated: true, completion: nil)
+    }
+        
+        
+        func deleteRow()
+        {
+        if let selectedRows = tableView.indexPathsForSelectedRows{
+        var item = [String]()
+        for indexPath in selectedRows{
+            item.append(FolderData.Detail[(FolDelegate?.curInd)!].Notes[indexPath.row])
+        }
+        for i in item {
+        if let index = FolderData.Detail[(FolDelegate?.curInd)!].Notes.index(of: i)
+        {
+            FolderData.Detail[(FolDelegate?.curInd)!].Notes.remove(at: index)
+        }
+        }
+        tableView.beginUpdates()
+        tableView.deleteRows(at: selectedRows, with: .automatic)
+        tableView.endUpdates()
+        }
+        }
+
+        
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        table_view.cellForRow(at: indexPath)?.accessoryType = .checkmark
+    }
+    
+    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        
+         table_view.cellForRow(at: indexPath)?.accessoryType = .detailButton
+    }
+    
+    
+    
     /*
-    // Override to support conditional editing of the table view.
+     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
