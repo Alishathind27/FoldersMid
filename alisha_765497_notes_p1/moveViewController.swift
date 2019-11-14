@@ -12,7 +12,7 @@ class moveViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var Cancel: UIButton!
+    
     var NotesDelegate: NotesDetailTableViewController?
     
     
@@ -22,10 +22,22 @@ class moveViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         // Do any additional setup after loading the view.
         self.view.backgroundColor = UIColor.lightGray
         self.tableView.backgroundColor = UIColor.lightGray
-        self.Cancel.tintColor = .white
+//        self.Cancel.tintColor = .white
         
     }
-
+    
+    
+    @IBAction func Cancel(_ sender: UIButton)
+    {
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+    
+//    @IBAction func cancelButton(_ sender: UIButton)
+//    {
+//        self.presentingViewController?.dismiss(animated: true, completion: nil)
+//
+//    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return FolderData.Detail.count
     }
@@ -39,15 +51,22 @@ class moveViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let alertController = UIAlertController(title: "Move \(FolderData.Detail[indexPath.row].Folders)", message: "Are you sure", preferredStyle: .alert)
         let NAction = UIAlertAction(title: "No", style: .default, handler: nil)
-        NAction.setValue(UIColor.brown, forKey: "titleTextColour")
-        alertController.addAction(NAction)
+//        NAction.setValue(UIColor.brown, forKey: "titleTextColour")
         
-        alertController.addAction(UIAlertAction(title: "Move", style: .default, handler: {(action) in
+        let YAction = UIAlertAction(title: "Move", style: .default){
+            (action) in
+            self.NotesDelegate?.move(Index: indexPath.row)
+            self.presentingViewController?.dismiss(animated: true, completion: nil)
             
+        }
+//        alertController.addAction(UIAlertAction(title: "Move", style: .default, handler: {(action) in
+        alertController.addAction(NAction)
+        alertController.addAction(YAction)
+        self.present(alertController, animated: true, completion: nil)
             // move function
             //self.NotesDelegate
-        }))
-    }
+        
+        
     
 
     /*
@@ -60,4 +79,5 @@ class moveViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     */
 
+}
 }

@@ -170,22 +170,21 @@ class NotesDetailTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
 //       let DetailNotes = segue.destination as! NotesDetailViewController
 //              DetailNotes.notesTable = self
-        let DetailView = segue.destination as? NotesDetailViewController
-        DetailView?.notesTable = self
+        if let DetailView = segue.destination as? NotesDetailViewController {
+        DetailView.notesTable = self
         
         if let tableViewCell = sender as? UITableViewCell{
             if let index = tableView.indexPath(for: tableViewCell)?.row{
-//                DetailNotes.textString = Notes![index]
-                DetailView?.textString = FolderData.Detail[(FolDelegate?.curInd)!].Notes[index]
+                DetailView.textString = FolderData.Detail[(FolDelegate?.curInd)!].Notes[index]
 //                DetailNotes.textString = FolderData.Detail[index].Notes
                 curIndx = index
             }
         }
-//        if let tableViewcell = sender as? UITableViewCell{
-//      if let index = tableView.indexPath(for: tableViewCell)?.row{
-//                   detailNotes.textString = Folders.Notes![index]
-//                   curInd = index
-//            }}
+}
+        if let Move = segue.destination as? moveViewController
+        {
+            Move.NotesDelegate = self
+        }
     }
 
         func updateNotes(text: String)
