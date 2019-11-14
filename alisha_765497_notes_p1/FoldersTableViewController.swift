@@ -120,8 +120,8 @@ class FoldersTableViewController: UITableViewController {
     {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        let detailNotes = segue.destination as! NotesDetailTableViewController
-           detailNotes.FolDelegate = self
+        let detailNotes = segue.destination as? NotesDetailTableViewController
+        detailNotes?.FolDelegate = self
         
       if let tableViewCell = sender as? UITableViewCell{
            if let index = tableView.indexPath(for: tableViewCell)?.row{

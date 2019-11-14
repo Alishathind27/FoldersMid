@@ -154,13 +154,15 @@ class NotesDetailTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        let DetailNotes = segue.destination as! NotesDetailViewController
-        DetailNotes.notesTable = self
-
+//       let DetailNotes = segue.destination as! NotesDetailViewController
+//              DetailNotes.notesTable = self
+        let DetailView = segue.destination as? NotesDetailViewController
+        DetailView?.notesTable = self
+        
         if let tableViewCell = sender as? UITableViewCell{
             if let index = tableView.indexPath(for: tableViewCell)?.row{
 //                DetailNotes.textString = Notes![index]
-                DetailNotes.textString = FolderData.Detail[(FolDelegate?.curInd)!].Notes[index]
+                DetailView?.textString = FolderData.Detail[(FolDelegate?.curInd)!].Notes[index]
 //                DetailNotes.textString = FolderData.Detail[index].Notes
                 curIndx = index
             }
@@ -171,24 +173,24 @@ class NotesDetailTableViewController: UITableViewController {
 //                   curInd = index
 //            }}
     }
-    
-    func updateNotes(text: String)
-         {
-            tableView.reloadData()
-            
-            FolDelegate?.FolReload()
-            guard FolderData.Detail[(FolDelegate?.curInd)!].Notes != [] && curIndx != -1 else {
-                
-                FolderData.Detail[(FolDelegate?.curInd)!].Notes.append(text)
+
+        func updateNotes(text: String)
+             {
+                tableView.reloadData()
                 
                 FolDelegate?.FolReload()
-                tableView.reloadData()
-                return
-                
-            }
-            FolderData.Detail[(FolDelegate?.curInd)!].Notes[curIndx] = text
-            let IndexValue = IndexPath(item: curIndx, section: 0)
-            tableView.reloadRows(at: [IndexValue], with: .middle)
-     
-}
+                guard FolderData.Detail[(FolDelegate?.curInd)!].Notes != [] && curIndx != -1 else {
+                    
+                    FolderData.Detail[(FolDelegate?.curInd)!].Notes.append(text)
+                    
+                    FolDelegate?.FolReload()
+                    tableView.reloadData()
+                    return
+                    
+                }
+                FolderData.Detail[(FolDelegate?.curInd)!].Notes[curIndx] = text
+                let IndexValue = IndexPath(item: curIndx, section: 0)
+                tableView.reloadRows(at: [IndexValue], with: .middle)
+         
+    }
 }
