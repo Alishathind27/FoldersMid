@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9B25BA15237DB48B002AB92A /* NotesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B25BA14237DB48B002AB92A /* NotesDetailViewController.swift */; };
-		9B25BA17237DBCA5002AB92A /* moveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B25BA16237DBCA5002AB92A /* moveViewController.swift */; };
 		9B25BA1F237DC912002AB92A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B25BA1E237DC912002AB92A /* Assets.xcassets */; };
+		9B3C9469237DD5BD00575C99 /* NotesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C9467237DD5BD00575C99 /* NotesDetailViewController.swift */; };
+		9B3C946A237DD5BD00575C99 /* moveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C9468237DD5BD00575C99 /* moveViewController.swift */; };
 		9B44297E237B29F900A91E1B /* NotesDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B44297D237B29F900A91E1B /* NotesDetailTableViewController.swift */; };
 		9B442984237B307600A91E1B /* FolderNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B442983237B307600A91E1B /* FolderNote.swift */; };
 		9BD62AB12379D2F0003FE0C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD62AB02379D2F0003FE0C2 /* AppDelegate.swift */; };
@@ -22,9 +22,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9B25BA14237DB48B002AB92A /* NotesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotesDetailViewController.swift; path = ../../NotesDetailViewController.swift; sourceTree = "<group>"; };
-		9B25BA16237DBCA5002AB92A /* moveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = moveViewController.swift; path = ../../moveViewController.swift; sourceTree = "<group>"; };
 		9B25BA1E237DC912002AB92A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9B3C9467237DD5BD00575C99 /* NotesDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesDetailViewController.swift; sourceTree = "<group>"; };
+		9B3C9468237DD5BD00575C99 /* moveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = moveViewController.swift; sourceTree = "<group>"; };
 		9B44297D237B29F900A91E1B /* NotesDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesDetailTableViewController.swift; sourceTree = "<group>"; };
 		9B442983237B307600A91E1B /* FolderNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderNote.swift; sourceTree = "<group>"; };
 		9BD62AAD2379D2F0003FE0C2 /* alisha_765497_notes_p1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = alisha_765497_notes_p1.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,14 +69,14 @@
 			isa = PBXGroup;
 			children = (
 				9BD62AC62379D5A4003FE0C2 /* New Group */,
+				9B3C9468237DD5BD00575C99 /* moveViewController.swift */,
+				9B3C9467237DD5BD00575C99 /* NotesDetailViewController.swift */,
 				9BD62AB02379D2F0003FE0C2 /* AppDelegate.swift */,
 				9BD62AB22379D2F0003FE0C2 /* SceneDelegate.swift */,
 				9BD62AB42379D2F0003FE0C2 /* ViewController.swift */,
 				9BD62AB62379D2F0003FE0C2 /* Main.storyboard */,
 				9B442983237B307600A91E1B /* FolderNote.swift */,
 				9B25BA1E237DC912002AB92A /* Assets.xcassets */,
-				9B25BA14237DB48B002AB92A /* NotesDetailViewController.swift */,
-				9B25BA16237DBCA5002AB92A /* moveViewController.swift */,
 				9B44297D237B29F900A91E1B /* NotesDetailTableViewController.swift */,
 				9BD62ABB2379D2F1003FE0C2 /* LaunchScreen.storyboard */,
 				9BD62ABE2379D2F1003FE0C2 /* Info.plist */,
@@ -165,8 +165,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B25BA15237DB48B002AB92A /* NotesDetailViewController.swift in Sources */,
-				9B25BA17237DBCA5002AB92A /* moveViewController.swift in Sources */,
+				9B3C9469237DD5BD00575C99 /* NotesDetailViewController.swift in Sources */,
+				9B3C946A237DD5BD00575C99 /* moveViewController.swift in Sources */,
 				9B442984237B307600A91E1B /* FolderNote.swift in Sources */,
 				9BD62AB52379D2F0003FE0C2 /* ViewController.swift in Sources */,
 				9BD62ACA2379E53A003FE0C2 /* FoldersTableViewController.swift in Sources */,
