@@ -16,6 +16,9 @@ class NotesDetailTableViewController: UITableViewController {
     
     @IBOutlet var table_view: UITableView!
     var curIndx = -1
+    var selRows: [IndexPath]?
+    var isVisible = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -80,7 +83,18 @@ class NotesDetailTableViewController: UITableViewController {
             self.present(alertController, animated: true, completion: nil)
     }
         
+       func move(Index: Int)
+       {
+        selRows = table_view.indexPathsForSelectedRows!
+        for item in selRows!{
+            let NoteMove = FolderData.Detail[(FolDelegate?.curInd)!].Notes[item.row]
+            FolderData.Detail[Index].Notes.append(NoteMove)
+        }
+        deleteRow()
+        }
         
+    
+    
         func deleteRow()
         {
         if let selectedRows = tableView.indexPathsForSelectedRows{
